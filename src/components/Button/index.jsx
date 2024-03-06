@@ -7,10 +7,10 @@ export default function Button({...props}) {
     <TouchableOpacity
       {...props}
       style={[
-        ButtonStyles(props.mt, props.w).button,
+        ButtonStyles(props.mt, props.w, props.color, props.borderStyle).button,
         props.disabled && {opacity: 0.5},
       ]}>
-      <Text style={TxtBtnStyles.txtButton}>{props.txt}</Text>
+      <Text style={TxtBtnStyles(props.colorTxt).txtButton}>{props.txt}</Text>
     </TouchableOpacity>
   );
 }

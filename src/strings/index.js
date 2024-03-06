@@ -15,6 +15,9 @@ const Strings = {
   ErrorToSearchModelsFromApi: 'Erro ao buscar modelos da API!',
   ErrorToSearchYearsFromApi: 'Erro ao buscar anos da API!',
   ErrorToSearchInfoFromApi: 'Erro ao buscar informações do veículo na API!',
+  cleanFields: 'limpar campos',
+  selectFieldsInOrder:
+    'Informe os campos em ordem! Primeiro a marca, em segundo o modelo e em terceiro o ano.',
 };
 
 export default Strings;

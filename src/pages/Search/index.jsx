@@ -1,4 +1,4 @@
-import {SafeAreaView, Text, View} from 'react-native';
+import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import BackgroundSpinner from '../../components/BackgroundSpinner';
 import {SearchStyles} from './styles';
 import Logo from '../../components/Logo';
@@ -12,12 +12,14 @@ import useSearchForm from '../../hooks/useSearchForm';
 export default function Search() {
   const {
     loading,
+    loadingSearch,
     brands,
     getBrandsFromAPI,
     models,
     getModelsFromAPI,
     years,
     getYearsFromAPI,
+    getInfoFromAPI,
   } = useSearchRequests();
 
   const {
@@ -28,10 +30,12 @@ export default function Search() {
     year,
     changeYearValue,
     isSubmitDisable,
+    resetAllFields,
   } = useSearchForm();
 
   return (
     <SafeAreaView style={SearchStyles.container}>
+      {loadingSearch && <BackgroundSpinner />}
       <View style={SearchStyles.header}>
         <Logo
           logo_with={'100%'}
@@ -58,6 +62,7 @@ export default function Search() {
             getData={getBrandsFromAPI}
             spinner={loading}
             isDisable={false}
+            validate={false}
             value={brand}
             selectValue={changeBrandValue}
           />
@@ -67,7 +72,8 @@ export default function Search() {
             options={models}
             getData={getModelsFromAPI}
             spinner={loading}
-            isDisable={!brand?.nome}
+            isDisable={false}
+            validate={!brand?.nome}
             value={model}
             selectValue={changeModelValue}
           />
@@ -77,19 +83,38 @@ export default function Search() {
             options={years}
             getData={getYearsFromAPI}
             spinner={loading}
-            isDisable={!model?.nome}
+            isDisable={false}
+            validate={!model?.nome}
             value={year}
             selectValue={changeYearValue}
           />
         </View>
-        <Button
-          onPress={() => {}}
-          loading={false}
-          disabled={isSubmitDisable}
-          txt={Strings.search.toLocaleUpperCase()}
-          mt={40}
-          w={'100%'}
-        />
+        <View style={SearchStyles.wrapperRowBtns}>
+          <Button
+            onPress={() => resetAllFields()}
+            loading={false}
+            color={Colors.white}
+            colorTxt={Colors.arsenic}
+            borderStyle={true}
+            disabled={false}
+            txt={Strings.cleanFields?.toLocaleUpperCase()}
+            mt={0}
+            w={'48%'}
+          />
+          <Button
+            onPress={() =>
+              getInfoFromAPI(brand?.codigo, model?.codigo, year?.codigo)
+            }
+            color={Colors.ufoGreen}
+            colorTxt={Colors.white}
+            loading={false}
+            borderStyle={false}
+            disabled={isSubmitDisable}
+            txt={Strings.search.toLocaleUpperCase()}
+            mt={0}
+            w={'48%'}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );

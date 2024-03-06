@@ -11,14 +11,37 @@ export function SearchFormProvider({children}) {
 
   function changeBrandValue(brand_item) {
     setBrand({codigo: brand_item?.codigo, nome: brand_item?.nome});
+
+    if (!!model?.nome || !!year?.nome) {
+      resetModelAndYearFields();
+    }
   }
 
   function changeModelValue(model_item) {
     setModel({codigo: model_item?.codigo, nome: model_item?.nome});
+
+    if (!!year?.nome) {
+      resetYearField();
+    }
   }
 
   function changeYearValue(year_item) {
     setYear({codigo: year_item?.codigo, nome: year_item?.nome});
+  }
+
+  function resetAllFields() {
+    setBrand({codigo: '', nome: ''});
+    setModel({codigo: 0, nome: ''});
+    setYear({codigo: '', nome: ''});
+  }
+
+  function resetModelAndYearFields() {
+    setModel({codigo: 0, nome: ''});
+    setYear({codigo: '', nome: ''});
+  }
+
+  function resetYearField() {
+    setYear({codigo: '', nome: ''});
   }
 
   useEffect(() => {
@@ -39,6 +62,7 @@ export function SearchFormProvider({children}) {
         changeModelValue,
         changeYearValue,
         isSubmitDisable,
+        resetAllFields,
       }}>
       {children}
     </SearchFormContext.Provider>

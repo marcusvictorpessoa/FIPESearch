@@ -1,23 +1,26 @@
 import {StyleSheet} from 'react-native';
 import {Colors} from '../../themes/colors';
 
-export const ButtonStyles = (mt, w) =>
+export const ButtonStyles = (mt, w, color, borderStyle) =>
   StyleSheet.create({
     button: {
-      backgroundColor: Colors.ufoGreen,
+      backgroundColor: color,
       width: w,
-      height: 55,
+      height: 50,
       alignItems: 'center',
       justifyContent: 'center',
       marginTop: mt,
       borderRadius: 5,
+      borderWidth: borderStyle ? 1 : 0,
+      borderColor: borderStyle ? Colors.arsenic : null,
     },
   });
 
-export const TxtBtnStyles = StyleSheet.create({
-  txtButton: {
-    color: Colors.white,
-    fontSize: 18,
-    fontWeight: '500',
-  },
-});
+export const TxtBtnStyles = colorTxt =>
+  StyleSheet.create({
+    txtButton: {
+      color: colorTxt,
+      fontSize: 17,
+      fontWeight: '300',
+    },
+  });

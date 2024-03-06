@@ -10,6 +10,7 @@ export default function useSearchRequests() {
   const [years, setYears] = useState([]);
 
   const [loading, setLoading] = useState(false);
+  const [loadingSearch, setLoadingSearch] = useState(false);
 
   const {brand, model, year} = useSearchForm();
 
@@ -56,7 +57,7 @@ export default function useSearchRequests() {
   }
 
   async function getInfoFromAPI() {
-    setLoading(true);
+    setLoadingSearch(true);
     try {
       const data = await getInfo(brand?.codigo, model?.codigo, year?.codigo);
       return data;
@@ -65,7 +66,7 @@ export default function useSearchRequests() {
         cancelable: true,
       });
     } finally {
-      setLoading(false);
+      setLoadingSearch(false);
     }
   }
 
@@ -78,5 +79,6 @@ export default function useSearchRequests() {
     getModelsFromAPI,
     getYearsFromAPI,
     getInfoFromAPI,
+    loadingSearch,
   };
 }

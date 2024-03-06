@@ -5,6 +5,7 @@ import {
   Modal,
   ScrollView,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 import {Colors} from '../../themes/colors';
 import {useEffect, useState} from 'react';
@@ -20,8 +21,22 @@ export default function BottomSheetModal({
   isDisable,
   getData,
   spinner,
+  validate,
 }) {
   const [showModal, setShowModal] = useState(false);
+
+  function openModal() {
+    if (validate) {
+      return Alert.alert(
+        Strings.FIPESearch,
+        Strings.selectFieldsInOrder,
+        [{text: Strings.ok}],
+        {cancelable: true},
+      );
+    }
+
+    setShowModal(true);
+  }
 
   function selectOption(op) {
     selectValue(op);
@@ -43,7 +58,7 @@ export default function BottomSheetModal({
       <TouchableOpacity
         disabled={isDisable}
         style={BottomSheetModalStyles.btnBottomSheet}
-        onPress={() => setShowModal(true)}>
+        onPress={() => openModal()}>
         <View>
           {!!value?.nome ? (
             <Text style={BottomSheetModalStyles.valueSelectedBtnBottomSheet}>
@@ -55,7 +70,7 @@ export default function BottomSheetModal({
             </Text>
           )}
         </View>
-        <Text style={BottomSheetModalStyles.arrowDownIcon}>v</Text>
+        <Text style={BottomSheetModalStyles.arrowDownIcon}>&or;</Text>
       </TouchableOpacity>
       {showModal && (
         <Modal

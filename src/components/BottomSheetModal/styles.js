@@ -76,7 +76,7 @@ export const BottomSheetModalStyles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   btnClose: {
-    padding: 10,
+    paddingHorizontal: 10,
   },
   closeIcon: {
     fontSize: 25,

@@ -55,6 +55,16 @@ export const SearchStyles = StyleSheet.create({
   wrapperFields: {
     height: '55%',
     width: '100%',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+  },
+  wrapperRowBtns: {
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-between'
+  },
+  cleanFieldsTxt: {
+    fontSize: 16,
+    color: Colors.arsenic,
+    alignSelf: 'center',
   },
 });

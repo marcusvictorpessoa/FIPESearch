@@ -5,7 +5,7 @@ import {Colors} from '../../themes/colors';
 export default function BackgroundSpinner() {
   return (
     <View style={BackgroundSpinnerStyles.backgroundContainer}>
-      <ActivityIndicator color={Colors.blueBolt} size={'large'} />
+      <ActivityIndicator color={Colors.black} size={'large'} />
     </View>
   );
 }

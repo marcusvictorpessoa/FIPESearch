@@ -10,7 +10,7 @@ export default function useConnect() {
         index: 0,
         routes: [{name: Keys.search}],
       });
-    }, 2000);
+    }, 3500);
   }
 
   return {
