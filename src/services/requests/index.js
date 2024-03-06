@@ -1,3 +1,4 @@
+import Strings from '../../strings';
 import api from '../api';
 
 export async function getBrands() {
@@ -5,16 +6,17 @@ export async function getBrands() {
     const response = await api.get('/carros/marcas');
     return response.data;
   } catch (error) {
-    throw new Error('Erro ao buscar marcas na API!');
+    throw new Error(Strings.ErrorToSearchBrandsFromApi);
   }
 }
 
 export async function getModels(brand_id) {
+  console.log('url request: ', `/carros/marcas/${brand_id}/modelos`);
   try {
     const response = await api.get(`/carros/marcas/${brand_id}/modelos`);
     return response.data;
   } catch (error) {
-    throw new Error('Erro ao buscar modelos na API!');
+    throw new Error(Strings.ErrorToSearchModelsFromApi);
   }
 }
 
@@ -25,7 +27,7 @@ export async function getYears(brand_id, model_id) {
     );
     return response.data;
   } catch (error) {
-    throw new Error('Erro ao buscar anos na API!');
+    throw new Error(Strings.ErrorToSearchYearsFromApi);
   }
 }
 
@@ -36,6 +38,6 @@ export async function getInfo(brand_id, model_id, year_id) {
     );
     return response.data;
   } catch (error) {
-    throw new Error('Erro ao buscar informações do veículo na API!');
+    throw new Error(Strings.ErrorToSearchInfoFromApi);
   }
 }

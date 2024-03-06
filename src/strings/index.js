@@ -9,6 +9,12 @@ const Strings = {
   brands: 'marcas',
   models: 'modelos',
   years: 'anos',
+  FIPESearch: 'FIPE Search',
+  ok: 'ok',
+  ErrorToSearchBrandsFromApi: 'Erro ao buscar marcas da API!',
+  ErrorToSearchModelsFromApi: 'Erro ao buscar modelos da API!',
+  ErrorToSearchYearsFromApi: 'Erro ao buscar anos da API!',
+  ErrorToSearchInfoFromApi: 'Erro ao buscar informações do veículo na API!',
 };
 
 export default Strings;

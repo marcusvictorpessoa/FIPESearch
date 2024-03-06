@@ -1,6 +1,13 @@
-import {Text, TouchableOpacity, View, Modal, ScrollView} from 'react-native';
+import {
+  Text,
+  TouchableOpacity,
+  View,
+  Modal,
+  ScrollView,
+  ActivityIndicator,
+} from 'react-native';
 import {Colors} from '../../themes/colors';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {BottomSheetModalStyles} from './styles';
 import Strings from '../../strings';
 
@@ -11,13 +18,25 @@ export default function BottomSheetModal({
   options,
   selectValue,
   isDisable,
+  getData,
+  spinner,
 }) {
   const [showModal, setShowModal] = useState(false);
 
-  /*function selectOption(op) {
+  function selectOption(op) {
     selectValue(op);
     setShowModal(false);
-  }*/
+  }
+
+  async function initOptions() {
+    await getData();
+  }
+
+  useEffect(() => {
+    if (showModal) {
+      initOptions();
+    }
+  }, [showModal]);
 
   return (
     <View style={BottomSheetModalStyles.bottomSheetContainer}>
@@ -26,9 +45,9 @@ export default function BottomSheetModal({
         style={BottomSheetModalStyles.btnBottomSheet}
         onPress={() => setShowModal(true)}>
         <View>
-          {value ? (
+          {!!value?.nome ? (
             <Text style={BottomSheetModalStyles.valueSelectedBtnBottomSheet}>
-              {value}
+              {value?.nome}
             </Text>
           ) : (
             <Text style={BottomSheetModalStyles.valueBtnBottomSheet}>
@@ -58,24 +77,28 @@ export default function BottomSheetModal({
                   <Text style={BottomSheetModalStyles.closeIcon}>X</Text>
                 </TouchableOpacity>
               </View>
-              <ScrollView style={BottomSheetModalStyles.optionsContainer}>
-                {options?.map(option => {
-                  return (
-                    <TouchableOpacity
-                      onPress={() => selectOption(option)}
-                      key={option?.id}
-                      style={[
-                        BottomSheetModalStyles.option,
-                        option?.selected &&
-                          BottomSheetModalStyles.selectedOption,
-                      ]}>
-                      <Text style={BottomSheetModalStyles.txtOption}>
-                        {option?.name}
-                      </Text>
-                    </TouchableOpacity>
-                  );
-                })}
-              </ScrollView>
+              {spinner ? (
+                <ActivityIndicator size={'large'} color={Colors.arsenic} />
+              ) : (
+                <ScrollView style={BottomSheetModalStyles.optionsContainer}>
+                  {options?.map(option => {
+                    return (
+                      <TouchableOpacity
+                        onPress={() => selectOption(option)}
+                        key={option?.codigo}
+                        style={[
+                          BottomSheetModalStyles.option,
+                          option?.selected &&
+                            BottomSheetModalStyles.selectedOption,
+                        ]}>
+                        <Text style={BottomSheetModalStyles.txtOption}>
+                          {option?.nome}
+                        </Text>
+                      </TouchableOpacity>
+                    );
+                  })}
+                </ScrollView>
+              )}
             </View>
           </View>
         </Modal>

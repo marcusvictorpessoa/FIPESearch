@@ -7,6 +7,7 @@ import {
 
 import { Colors } from './src/themes/colors';
 import AppNavigation from './src/routes/AppNavigation';
+import { SearchFormProvider } from './src/contexts/SearchFormContext';
 
 function App(): React.JSX.Element {
 
@@ -16,7 +17,9 @@ function App(): React.JSX.Element {
         barStyle={'light-content'}
         backgroundColor={Colors.blueBolt}
       />
-      <AppNavigation />
+      <SearchFormProvider>
+        <AppNavigation />
+      </SearchFormProvider>
     </SafeAreaView>
   );
 }

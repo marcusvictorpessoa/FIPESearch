@@ -8,7 +8,7 @@ export default function Button({...props}) {
       {...props}
       style={[
         ButtonStyles(props.mt, props.w).button,
-        props.disabled && {opacity: 0.7},
+        props.disabled && {opacity: 0.5},
       ]}>
       <Text style={TxtBtnStyles.txtButton}>{props.txt}</Text>
     </TouchableOpacity>
