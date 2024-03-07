@@ -45,9 +45,10 @@ npx react-native run-ios
 
 Telas do aplicativo
 
-1 - splashscreen animada
+<div style="dipslay: flex;flex-direction: column;">
 <img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/01%20splashscreen%20animada.jpeg" />
-
+1 - splashscreen animada
+</div>
 2 - init load screen
 <img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/02%20init%20load%20screen.jpeg" />
 
