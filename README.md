@@ -10,6 +10,10 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 - Você precisa ter intalado o NODE.JS, o NPM, opcionalmente o framework React Native, e o ambiente deve está devidamente configurado assim como explica a [Documentação do React Native](https://reactnative.dev/docs/0.71/environment-setup).
 
+### Download APK
+
+- Para baixar o .APK e instalar no ANDROID basta fazer o [download](https://drive.google.com/drive/folders/10joqrOiboogx-REiO1W06tZ5n1xTIT8X?usp=sharing)
+
 ### 🔧 Instalação
 
 Para executar o projeto no ambiente ANDROID ou iOS.
