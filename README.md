@@ -8,7 +8,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 ### 📋 Pré-requisitos
 
-- Você precisa ter intalado o NODE.JS, o NPM e opcionalmente o framework React Native.
+- Você precisa ter intalado o NODE.JS, o NPM, opcionalmente o framework React Native, e o ambiente deve está devidamente configurado assim como explica a [Documentação do React Native](https://reactnative.dev/docs/0.71/environment-setup).
 
 
 ### 🔧 Instalação
@@ -39,7 +39,32 @@ npx react-native run-ios
 
 ## 🛠️ Construído com
 
-* [React Native](https://reactnative.dev/docs/0.71/environment-setup) - O framework mobile usado.
+* [React Native](https://reactnative.dev/) - O framework mobile usado.
+
+## 🛠️ Telas
+
+Telas do aplicativo
+
+1 - splashscreen animada
+<img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/01%20splashscreen%20animada.jpeg" />
+
+2 - init load screen
+<img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/02%20init%20load%20screen.jpeg" />
+
+3 - search screen
+<img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/03%20search%20screen.jpeg" />
+
+4 -  search screen fields
+<img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/04%20search%20screen%20fields.jpeg" />
+
+5 - search screen modal active
+<img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/05%20search%20screen%20modal%20active.jpeg" />
+
+6 - search screen alert validation
+<img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/06%20search%20screen%20alert%20validation.jpeg" />
+
+7 - info screen
+<img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/07%20info%20screen.jpeg" />
 
 
 ## 📌 Versão
