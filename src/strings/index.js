@@ -18,6 +18,13 @@ const Strings = {
   cleanFields: 'limpar campos',
   selectFieldsInOrder:
     'Informe os campos em ordem! Primeiro a marca, em segundo o modelo e em terceiro o ano.',
+  informations: 'informações',
+  codeFipe: 'código fipe',
+  carType: 'tipo de veículo',
+  value: 'valor',
+  fuel: 'combustível',
+  mothReference: 'mês referência',
+  acronymFuel: 'sigla do combustível',
 };
 
 export default Strings;

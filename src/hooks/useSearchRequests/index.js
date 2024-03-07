@@ -3,8 +3,12 @@ import {getBrands, getInfo, getModels, getYears} from '../../services/requests';
 import {Alert} from 'react-native';
 import Strings from '../../strings';
 import useSearchForm from '../useSearchForm';
+import {useNavigation} from '@react-navigation/native';
+import {Keys} from '../../routes/keys';
 
 export default function useSearchRequests() {
+  const navigation = useNavigation();
+
   const [brands, setBrands] = useState([]);
   const [models, setModels] = useState([]);
   const [years, setYears] = useState([]);
@@ -58,9 +62,10 @@ export default function useSearchRequests() {
 
   async function getInfoFromAPI() {
     setLoadingSearch(true);
+    let data_param = {};
     try {
       const data = await getInfo(brand?.codigo, model?.codigo, year?.codigo);
-      return data;
+      data_param = data;
     } catch (error) {
       Alert.alert(Strings.FIPESearch, error?.message, [{text: Strings.ok}], {
         cancelable: true,
@@ -68,6 +73,13 @@ export default function useSearchRequests() {
     } finally {
       setLoadingSearch(false);
     }
+
+    navigation.navigate(Keys.info, {
+      ...data_param,
+      brandName: brand?.nome,
+      modelName: model?.nome,
+      yearName: year?.nome,
+    });
   }
 
   return {

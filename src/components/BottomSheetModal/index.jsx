@@ -101,11 +101,7 @@ export default function BottomSheetModal({
                       <TouchableOpacity
                         onPress={() => selectOption(option)}
                         key={option?.codigo}
-                        style={[
-                          BottomSheetModalStyles.option,
-                          option?.selected &&
-                            BottomSheetModalStyles.selectedOption,
-                        ]}>
+                        style={BottomSheetModalStyles.option}>
                         <Text style={BottomSheetModalStyles.txtOption}>
                           {option?.nome}
                         </Text>

@@ -1,5 +1,5 @@
 import {Image, View} from 'react-native';
-import {ContainerStyles, LogoStyles} from './styles';
+import {ContainerStyles, LogoStyles, IconStyles} from './styles';
 
 export default function Logo({
   logo_width,
@@ -19,6 +19,11 @@ export default function Logo({
         source={require('../../assets/FIPESearch_logo_white_transparent.png')}
         resizeMode="contain"
         style={LogoStyles(logo_width, logo_height, logo_color).logo}
+      />
+      <Image
+        source={require('../../assets/lupa_png.png')}
+        resizeMode="contain"
+        style={IconStyles.ico}
       />
     </View>
   );

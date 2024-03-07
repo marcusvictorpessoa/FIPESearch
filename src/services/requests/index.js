@@ -11,7 +11,6 @@ export async function getBrands() {
 }
 
 export async function getModels(brand_id) {
-  console.log('url request: ', `/carros/marcas/${brand_id}/modelos`);
   try {
     const response = await api.get(`/carros/marcas/${brand_id}/modelos`);
     return response.data;

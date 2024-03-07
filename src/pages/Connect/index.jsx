@@ -18,7 +18,7 @@ export default function Connect() {
         logo_with={'100%'}
         logo_height={'100%'}
         logo_color={Colors.white}
-        container_flex={0.15}
+        container_flex={0.12}
         container_width={'100%'}
         container_height={'100%'}
       />

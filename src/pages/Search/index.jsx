@@ -8,6 +8,7 @@ import BottomSheetModal from '../../components/BottomSheetModal';
 import Button from '../../components/Button';
 import useSearchRequests from '../../hooks/useSearchRequests';
 import useSearchForm from '../../hooks/useSearchForm';
+import Divider from '../../components/Divider';
 
 export default function Search() {
   const {
@@ -66,6 +67,7 @@ export default function Search() {
             value={brand}
             selectValue={changeBrandValue}
           />
+          <Divider />
           <BottomSheetModal
             title={Strings.models?.toUpperCase()}
             valuePlaceholder={Strings.model?.toUpperCase()}
@@ -77,6 +79,7 @@ export default function Search() {
             value={model}
             selectValue={changeModelValue}
           />
+          <Divider />
           <BottomSheetModal
             title={Strings.years?.toLocaleUpperCase()}
             valuePlaceholder={Strings.year?.toUpperCase()}
