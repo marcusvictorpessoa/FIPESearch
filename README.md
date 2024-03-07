@@ -50,22 +50,22 @@ Telas do aplicativo
 
 <img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/01%20splashscreen%20animada.jpeg" />
 1 - splashscreen animada
-
+<br>
 <img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/02%20init%20load%20screen.jpeg" />
 2 - init load screen
-
+<br>
 <img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/03%20search%20screen.jpeg" />
 3 - search screen
-
+<br>
 <img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/04%20search%20screen%20fields.jpeg" />
 4 -  search screen fields
-
+<br>
 <img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/05%20search%20screen%20modal%20active.jpeg" />
 5 - search screen modal active
-
+<br>
 <img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/06%20search%20screen%20alert%20validation.jpeg" />
 6 - search screen alert validation
-
+<br>
 <img width="100px" src="https://github.com/marcusvictorpessoa/FIPESearch/blob/main/screens/07%20info%20screen.jpeg" />
 7 - info screen
 
